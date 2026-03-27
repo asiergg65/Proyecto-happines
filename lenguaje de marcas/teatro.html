@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>H&Co | Teatro & Cine</title>
+</head>
+<body class="bg-gray-50 font-sans text-[#555555]">
+    <nav class="bg-[#555555] text-white font-bold uppercase text-xs tracking-widest">
+        <div class="container mx-auto flex">
+            <a href="index.html" class="px-6 py-5 hover:bg-[#ba007c]">Inicio</a>
+            <a href="proximos.html" class="px-6 py-5 bg-[#009bdb]">Eventos</a>
+            <a href="historial.html" class="px-6 py-5 hover:bg-[#ba007c]">Historial</a>
+            <a href="contacto.html" class="px-6 py-5 hover:bg-[#ba007c]">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="py-16 bg-[#009bdb] text-white text-center shadow-lg">
+        <h1 class="text-5xl font-black italic uppercase tracking-tighter">Cine & Teatro</h1>
+        <p class="mt-2 text-sm font-bold uppercase tracking-widest opacity-80">Artes Escénicas en el Norte</p>
+    </header>
+
+    <div class="container mx-auto px-4 pt-8 text-center md:text-left">
+        <a href="proximos.html" class="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-[#009bdb] hover:text-[#555555] transition">
+            ← Volver a la agenda completa
+        </a>
+    </div>
+
+    <main class="container mx-auto px-4 py-12 grid grid-cols-1 gap-8 max-w-5xl">
+        <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-[#009bdb] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" class="md:w-64 h-56 md:h-auto object-cover group-hover:scale-105 transition duration-500">
+            <div class="p-8">
+                <span class="text-[#009bdb] font-black text-xs uppercase italic">25-06-2026</span>
+                <h2 class="text-3xl font-black uppercase mt-2">Don Juan Tenorio</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">La gran representación clásica anual en el Teatro Jovellanos.</p>
+            </div>
+        </div>
+        <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-[#009bdb] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" class="md:w-64 h-56 md:h-auto object-cover group-hover:scale-105 transition duration-500">
+            <div class="p-8">
+                <span class="text-[#009bdb] font-black text-xs uppercase italic">20-06-2026</span>
+                <h2 class="text-3xl font-black uppercase mt-2">Cine Bajo las Estrellas</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">Ciclo de cine de verano en el Cerro de Santa Catalina.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

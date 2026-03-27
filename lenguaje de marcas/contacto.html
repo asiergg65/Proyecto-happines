@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>H&Co - Contacto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> .bg-pink-corp { background-color: #ba007c; } .bg-gray-corp { background-color: #555555; } </style>
+</head>
+<body class="bg-white">
+    <header class="bg-white py-4 flex justify-center border-b"><img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-14 md:h-20"></header>
+    <nav class="bg-gray-corp sticky top-0 z-50">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap text-white font-bold uppercase text-xs">
+                <li><a href="index.html" class="block px-6 py-4 hover:bg-pink-corp transition">Inicio</a></li>
+                <li><a href="proximos.html" class="block px-6 py-4 hover:bg-pink-corp transition">Eventos</a></li>
+                <li><a href="historial.html" class="block px-6 py-4 hover:bg-pink-corp transition">Historial</a></li>
+                <li><a href="sobre-nosotros.html" class="block px-6 py-4 hover:bg-pink-corp transition">Sobre Nosotros</a></li>
+                <li><a href="fuentes.html" class="block px-6 py-4 hover:bg-pink-corp transition">Fuentes</a></li>
+                <li><a href="contacto.html" class="block px-6 py-4 bg-pink-corp">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="max-w-lg mx-auto py-12 px-6">
+        <form class="space-y-4 bg-gray-50 p-10 rounded shadow-xl">
+            <h2 class="text-3xl font-black text-center uppercase tracking-tighter">Contacto</h2>
+            <input type="text" placeholder="Tu Nombre" class="w-full p-3 border rounded" required>
+            <input type="email" placeholder="Tu Correo" class="w-full p-3 border rounded" required>
+            <textarea placeholder="Mensaje" class="w-full p-3 border rounded" rows="4"></textarea>
+            <label class="flex items-center gap-2"><input type="checkbox"> Suscribirme</label>
+            <button class="w-full bg-pink-corp text-white py-3 font-bold hover:opacity-90">ENVIAR</button>
+        </form>
+    </main>
+    <footer class="py-10 text-center"><img src="happines-and-co-propuesta-06.jpg" class="h-10 mx-auto opacity-50"></footer>
+</body>
+</html>

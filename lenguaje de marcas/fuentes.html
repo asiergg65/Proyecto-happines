@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&Co | Fuentes y Recursos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-pink-corp { background-color: #ba007c; }
+        .bg-gray-corp { background-color: #555555; }
+        .border-pink-corp { border-color: #ba007c; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <header class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <a href="index.html">
+               <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-14 md:h-20">
+            </a>
+            <div class="text-right">
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-black">Documentación</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-gray-corp sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center md:justify-start text-white font-bold uppercase text-[10px] md:text-xs tracking-widest">
+                <li class="border-r border-white/10"><a href="index.html" class="block px-6 py-5 hover:bg-pink-corp transition">Inicio</a></li>
+                <li class="border-r border-white/10"><a href="proximos.html" class="block px-6 py-5 hover:bg-pink-corp transition">Eventos</a></li>
+                <li class="border-r border-white/10"><a href="historial.html" class="block px-6 py-5 hover:bg-pink-corp transition">Historial</a></li>
+                <li class="border-r border-white/10"><a href="sobre-nosotros.html" class="block px-6 py-5 hover:bg-pink-corp transition">Sobre Nosotros</a></li>
+                <li class="border-r border-white/10"><a href="fuentes.html" class="block px-6 py-5 bg-pink-corp transition">Fuentes</a></li>
+                <li><a href="contacto.html" class="block px-6 py-5 hover:bg-pink-corp transition">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-20 max-w-5xl">
+        <div class="mb-16 text-center">
+            <h2 class="text-5xl font-black uppercase tracking-tighter mb-4 italic">Fuentes de <span class="text-pink-corp">Información</span></h2>
+            <p class="text-gray-500 uppercase tracking-widest text-sm font-bold">Recursos utilizados en el desarrollo del proyecto</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-white p-8 shadow-md border-t-4 border-pink-corp">
+                <h3 class="text-xl font-black uppercase mb-4 flex items-center gap-2">
+                    <span class="text-pink-corp">#</span> Imágenes y Fotografía
+                </h3>
+                <ul class="space-y-4 text-gray-600">
+                    <li class="flex flex-col">
+                        <span class="font-bold text-gray-900 text-sm">Unsplash API</span>
+                        <a href="https://unsplash.com" target="_blank" class="text-xs text-pink-corp hover:underline uppercase font-bold tracking-tighter">https://unsplash.com</a>
+                        <p class="text-xs mt-1">Utilizado para las fotografías de alta resolución en las secciones de Hero y Agenda.</p>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-gray-900 text-sm">Pravatar (Avatares)</span>
+                        <a href="https://pravatar.cc" target="_blank" class="text-xs text-pink-corp hover:underline uppercase font-bold tracking-tighter">https://pravatar.cc</a>
+                        <p class="text-xs mt-1">Generación de perfiles ficticios para la sección "Sobre Nosotros".</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 shadow-md border-t-4 border-[#009bdb]">
+                <h3 class="text-xl font-black uppercase mb-4 flex items-center gap-2">
+                    <span class="text-[#009bdb]">#</span> Tipografía y Diseño
+                </h3>
+                <ul class="space-y-4 text-gray-600">
+                    <li class="flex flex-col">
+                        <span class="font-bold text-gray-900 text-sm">Asenine & Ar Chistry</span>
+                        <p class="text-xs mt-1 italic">Tipografías corporativas especificadas en el manual de identidad de HAPPINESS&Co.</p>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-gray-900 text-sm">Tailwind CSS (CDN)</span>
+                        <a href="https://tailwindcss.com" target="_blank" class="text-xs text-[#009bdb] hover:underline uppercase font-bold tracking-tighter">https://tailwindcss.com</a>
+                        <p class="text-xs mt-1">Framework de estilos utilizado para el diseño responsive y maquetación.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 shadow-md border-t-4 border-[#ff7b00] md:col-span-2">
+                <h3 class="text-xl font-black uppercase mb-4 flex items-center gap-2">
+                    <span class="text-[#ff7b00]">#</span> Información de Eventos
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 text-gray-600">
+                    <div>
+                        <p class="text-sm">La información sobre eventos musicales, teatrales y exposiciones ha sido adaptada de las agendas culturales oficiales de:</p>
+                        <ul class="mt-4 list-disc list-inside text-xs font-bold space-y-1">
+                            <li>Laboral Ciudad de la Cultura</li>
+                            <li>Teatro Jovellanos de Gijón</li>
+                            <li>Ayuntamiento de Gijón (Cultura)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded text-xs italic border-l-4 border-[#ff7b00]">
+                        "Este sitio web ha sido creado con fines exclusivamente educativos para el módulo de Lenguajes de Marcas y Sistemas de Gestión de Información."
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-corp py-12 text-white mt-auto">
+        <div class="container mx-auto text-center px-4">
+            <img src="happines-and-co-propuesta-06.jpg" class="h-10 mx-auto mb-6 grayscale brightness-200 opacity-50">
+            <p class="text-[10px] uppercase tracking-widest">&copy; 2026 Proyecto HAPPINESS&Co | Gijón</p>
+        </div>
+    </footer>
+
+</body>
+</html>

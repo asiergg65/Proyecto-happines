@@ -1,81 +1,118 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Inicio</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPINESS&Co | Agenda Cultural Gijón</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Colores corporativos según PDF */
+        .bg-pink-corp { background-color: #ba007c; }
+        .text-pink-corp { color: #ba007c; }
+        .bg-blue-corp { background-color: #009bdb; }
+        .bg-orange-corp { background-color: #ff7b00; }
+        .bg-gray-corp { background-color: #555555; }
+        
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-white text-gray-900">
 
-  <style>
-@font-face { font-family: 'Asenine'; src: url('fonts/ASENINE.ttf'); }
-@font-face { font-family: 'Archristy'; src: url('fonts/ARCHRISTY.ttf'); }
-.logo { font-family: 'Asenine'; }
-.logo span { font-family: 'Archristy'; }
-</style>
+    <header class="border-b border-gray-100">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <a href="index.html">
+                <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-14 md:h-20">
+            </a>
+            <div class="hidden md:block text-right">
+                <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Gijón / Xixón</p>
+                <p class="text-sm italic text-gray-500">Orden en el océano del ocio</p>
+            </div>
+        </div>
+    </header>
 
-<header class="bg-[#ba007c] text-white p-4">
-<div class="container mx-auto flex justify-between items-center">
-<h1 class="text-4xl logo">Happiness <span>&</span> Co</h1>
-<nav class="space-x-4">
-<a href="index.html">Inicio</a>
-<a href="eventos.html">Eventos</a>
-<a href="historial.html">Historial</a>
-<a href="nosotros.html">Sobre nosotros</a>
-<a href="fuentes.html">Fuentes</a>
-<a href="contacto.html">Contacto</a>
-</nav>
-</div>
-</header>
+    <nav class="bg-gray-corp sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center md:justify-start text-white font-bold uppercase text-[10px] md:text-xs tracking-tighter md:tracking-widest">
+                <li class="border-r border-white/10"><a href="index.html" class="block px-4 md:px-8 py-4 bg-pink-corp transition">Inicio</a></li>
+                <li class="border-r border-white/10"><a href="proximos.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Eventos</a></li>
+                <li class="border-r border-white/10"><a href="historial.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Historial</a></li>
+                <li class="border-r border-white/10"><a href="sobre-nosotros.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Sobre Nosotros</a></li>
+                <li class="border-r border-white/10"><a href="fuentes.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Fuentes</a></li>
+                <li><a href="contacto.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<footer class="bg-gray-800 text-white text-center p-4 mt-8">
-© 2026 Happiness&Co
-</footer>
+    <section class="relative h-[70vh] w-full overflow-hidden bg-black">
+        <img src="assets/img/festival.jpg" 
+             class="w-full h-full object-cover opacity-70" alt="Evento destacado">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-20 text-white">
+            <p class="bg-pink-corp inline-block px-4 py-1 text-sm font-bold uppercase mb-4 tracking-widest">Destacado</p>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none tracking-tighter mb-4">Música en  <br>Asturias 2026</h1>
+            <p class="text-xl max-w-2xl font-light opacity-90">Descubre los sonidos que inundarán Asturias este verano. Entradas ya disponibles para los suscriptores.</p>
+        </div>
+    </section>
 
+    <section class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            
+            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+                <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 border-b-8 border-pink-corp"></div>
+                <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Música</div>
+            </a>
 
-<!-- HEADER AQUÍ -->
+            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+                <img src="assets/img/teatrocine.jpeg" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 border-b-8 border-blue-corp"></div>
+                <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Teatro & Cine</div>
+            </a>
 
-<section>
-<img src="img/happines-and-co-propuesta-01.jpg" class="w-full">
-</section>
+            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+                <img src="assets/img/expo.jfif" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 border-b-8 border-orange-corp"></div>
+                <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Exposiciones</div>
+            </a>
+             <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+                <img src="assets/img/CACHOPO.jpeg" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                <div class="absolute inset-0 border-b-8 border-orange-corp"></div>
+                <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Extras</div>
+            </a
 
-<div class="container mx-auto flex gap-6 mt-6">
+        </div>
+    </section>
 
-<main class="w-3/4">
-<h2 class="text-2xl font-bold mb-4">Próximos eventos</h2>
+    <section class="bg-gray-50 py-20">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-4xl font-black uppercase tracking-tighter mb-6">Un Océano de <span class="text-pink-corp">Posibilidades</span></h2>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                    HAPPINESS&Co nace de la necesidad de estructurar la inmensa oferta cultural de nuestra ciudad. Música, artes escénicas y plásticas en un solo lugar.
+                </p>
+                <a href="sobre-nosotros.html" class="inline-block border-2 border-gray-900 px-10 py-4 font-bold uppercase hover:bg-gray-900 hover:text-white transition">Conócenos</a>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400" class="rounded-lg shadow-xl translate-y-8">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
 
-<div class="grid md:grid-cols-2 gap-6">
+    <footer class="bg-gray-corp text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <img src="assets/img/happines-and-co-propuesta-06.jpg" alt="Logo Footer" class="h-10 mx-auto mb-10 ">
+            <div class="flex justify-center gap-8 mb-10 text-sm font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-pink-corp transition">Inicio</a>
+                <a href="contacto.html" class="hover:text-pink-corp transition">Contacto</a>
+                <a href="fuentes.html" class="hover:text-pink-corp transition">Fuentes</a>
+            </div>
+            <p class="text-xs text-gray-400">&copy; 2026 HAPPINESS&Co Gijón. Proyecto Educativo de Lenguajes de Marcas.</p>
+        </div>
+    </footer>
 
-<div class="bg-white p-4 shadow">
-<img src="img/happines-and-co-propuesta-02.jpg">
-<h3>Festival Música</h3>
-<p>05-06-2026</p>
-<a href="evento.html">Ver más</a>
-</div>
-
-<div class="bg-white p-4 shadow">
-<img src="img/happines-and-co-propuesta-03.jpg">
-<h3>Teatro</h3>
-<p>15-06-2026</p>
-<a href="evento.html">Ver más</a>
-</div>
-
-<div class="bg-white p-4 shadow">
-<img src="img/happines-and-co-propuesta-04.jpg">
-<h3>Exposición</h3>
-<p>25-06-2026</p>
-<a href="evento.html">Ver más</a>
-</div>
-
-</div>
-</main>
-
-<aside class="w-1/4">
-<h2 class="font-bold mb-4">Recomendados</h2>
-<img src="img/happines-and-co-propuesta-05.jpg">
-</aside>
-
-</div>
-
-<!-- FOOTER AQUÍ -->
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>H&Co | Música</title>
+</head>
+<body class="bg-gray-50 font-sans text-[#555555]">
+    <nav class="bg-[#555555] text-white font-bold uppercase text-xs tracking-widest">
+        <div class="container mx-auto flex">
+            <a href="index.html" class="px-6 py-5 hover:bg-[#ba007c]">Inicio</a>
+            <a href="proximos.html" class="px-6 py-5 bg-[#ba007c]">Eventos</a>
+            <a href="historial.html" class="px-6 py-5 hover:bg-[#ba007c]">Historial</a>
+            <a href="contacto.html" class="px-6 py-5 hover:bg-[#ba007c]">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="py-16 bg-[#ba007c] text-white text-center shadow-lg">
+        <h1 class="text-5xl font-black italic uppercase tracking-tighter">Agenda Musical</h1>
+        <p class="mt-2 text-sm font-bold uppercase tracking-widest opacity-80">El ritmo de Gijón</p>
+    </header>
+
+    <div class="container mx-auto px-4 pt-8 text-center md:text-left">
+        <a href="proximos.html" class="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-[#ba007c] hover:text-[#555555] transition">
+            ← Volver a la agenda completa
+        </a>
+    </div>
+
+    <main class="container mx-auto px-4 py-12 grid grid-cols-1 gap-8 max-w-5xl">
+        <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-[#ba007c] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600" class="md:w-64 h-56 md:h-auto object-cover group-hover:scale-105 transition duration-500">
+            <div class="p-8">
+                <span class="text-[#ba007c] font-black text-xs uppercase italic">15-06-2026</span>
+                <h2 class="text-3xl font-black uppercase mt-2">Metrópoli Gijón 2026</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">El festival de referencia con los mejores directos nacionales.</p>
+            </div>
+        </div>
+        <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-[#ba007c] overflow-hidden group">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600" class="md:w-64 h-56 md:h-auto object-cover group-hover:scale-105 transition duration-500">
+            <div class="p-8">
+                <span class="text-[#ba007c] font-black text-xs uppercase italic">05-06-2026</span>
+                <h2 class="text-3xl font-black uppercase mt-2">Gijón Jazz Nights</h2>
+                <p class="text-gray-600 mt-4 leading-relaxed">Sesiones nocturnas de jazz clásico en el Antiguo Instituto.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&Co | Todos los Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-gray-corp { background-color: #555555; }
+        .text-pink-corp { color: #ba007c; }
+        .border-pink-corp { border-color: #ba007c; }
+        .border-blue-corp { border-color: #009bdb; }
+        .border-orange-corp { border-color: #ff7b00; }
+    </style>
+</head>
+<body class="bg-white font-sans text-[#555555]">
+
+    <header class="border-b border-gray-100">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <a href="index.html">
+                <img src="happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-16 md:h-20">
+            </a>
+            <div class="text-right">
+                <p class="text-[10px] uppercase tracking-widest text-[#ba007c] font-black italic">Océano de posibilidades</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-gray-corp sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto">
+            <ul class="flex flex-wrap justify-center md:justify-start text-white font-bold uppercase text-[10px] md:text-xs tracking-widest">
+                <li class="border-r border-white/10"><a href="index.html" class="block px-6 py-5 hover:bg-[#ba007c] transition">Inicio</a></li>
+                <li class="border-r border-white/10"><a href="proximos.html" class="block px-6 py-5 bg-[#ba007c] transition">Eventos</a></li>
+                <li class="border-r border-white/10"><a href="historial.html" class="block px-6 py-5 hover:bg-[#ba007c] transition">Historial</a></li>
+                <li class="border-r border-white/10"><a href="sobre-nosotros.html" class="block px-6 py-5 hover:bg-[#ba007c] transition">Sobre Nosotros</a></li>
+                <li class="border-r border-white/10"><a href="fuentes.html" class="block px-6 py-5 hover:bg-[#ba007c] transition">Fuentes</a></li>
+                <li><a href="contacto.html" class="block px-6 py-5 hover:bg-[#ba007c] transition">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="bg-gray-50 py-8 border-b">
+        <div class="container mx-auto px-4 flex flex-wrap gap-4 items-center justify-center md:justify-start">
+            <span class="text-xs font-black uppercase text-gray-400 mr-4 italic">Filtrar por:</span>
+            <a href="musica.html" class="px-6 py-2 bg-[#ba007c] text-white text-xs font-bold uppercase rounded-full hover:opacity-80 transition shadow-md">Música</a>
+            <a href="teatro.html" class="px-6 py-2 bg-[#009bdb] text-white text-xs font-bold uppercase rounded-full hover:opacity-80 transition shadow-md">Teatro & Cine</a>
+            <a href="exposiciones.html" class="px-6 py-2 bg-[#ff7b00] text-white text-xs font-bold uppercase rounded-full hover:opacity-80 transition shadow-md">Exposiciones</a>
+            <a href="proximos.html" class="px-6 py-2 bg-[#555555] text-white text-xs font-bold uppercase rounded-full border-2 border-white shadow-inner">Ver Todo</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-black uppercase italic mb-12 border-l-8 border-[#ba007c] pl-4">Próximos Eventos</h2>
+        
+        <div class="grid grid-cols-1 gap-12">
+
+            <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-pink-corp overflow-hidden">
+                <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <span class="text-pink-corp font-black uppercase text-xs italic tracking-widest">Música / Festival [cite: 16]</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Metrópoli Gijón 2026</h3>
+                    <p class="text-gray-600 mb-6 italic">Música en directo y cultura pop en el Recinto Ferial. [cite: 5, 6]</p>
+                    <div class="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase">
+                        <span>📅 15-06-2026 [cite: 101]</span>
+                        <span>📍 Recinto Ferial Luis Adaro [cite: 116]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-blue-corp overflow-hidden">
+                <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <span class="text-[#009bdb] font-black uppercase text-xs italic tracking-widest">Teatro & Cine [cite: 17]</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Don Juan Tenorio</h3>
+                    <p class="text-gray-600 mb-6 italic">Clásico de las artes escénicas en el corazón de Gijón. [cite: 6]</p>
+                    <div class="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase">
+                        <span>📅 25-06-2026 [cite: 101]</span>
+                        <span>📍 Teatro Jovellanos [cite: 116]</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white flex flex-col md:flex-row shadow-xl border-l-8 border-orange-corp overflow-hidden">
+                <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1531233076846-0550f108498c?w=600" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8">
+                    <span class="text-[#ff7b00] font-black uppercase text-xs italic tracking-widest">Exposiciones [cite: 18]</span>
+                    <h3 class="text-3xl font-black uppercase mt-2 mb-4">Océanos de Plástico</h3>
+                    <p class="text-gray-600 mb-6 italic">Exposición de arte moderno y concienciación ambiental. [cite: 6]</p>
+                    <div class="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase">
+                        <span>📅 05-06-2026 [cite: 101]</span>
+                        <span>📍 Laboral Ciudad de la Cultura [cite: 116]</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-corp py-12 text-white border-t-8 border-[#ba007c]">
+        <div class="container mx-auto px-4 text-center">
+            <img src="happines-and-co-propuesta-06.jpg" class="h-10 mx-auto mb-6 grayscale brightness-200 opacity-50">
+            <p class="text-[10px] uppercase tracking-[0.4em] font-bold">HAPPINESS&Co © 2026 - Gijón, Asturias [cite: 8, 49]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
