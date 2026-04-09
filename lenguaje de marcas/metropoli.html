@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>METRÓPOLI GIJÓN | HAPPINESS&Co</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Control del desplegable */
+        #panel-entradas {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        #flecha {
+            transition: transform 0.3s;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <header class="bg-white border-b">
+    <header class="bg-white">
         <div class="container mx-auto px-4 py-8 flex justify-between items-center">
             <a href="index.html">
                 <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo H&Co" class="h-16 md:h-20">
@@ -20,13 +31,11 @@
         </div>
     </header>
 
-    <nav class="bg-[#555555]">
-        <div class="container mx-auto">
-            <ul class="flex text-white font-bold uppercase text-[10px] tracking-[0.2em]">
-                <li class="border-r border-white/10"><a href="index.html" class="block px-8 py-5 hover:bg-[#ba007c]">Inicio</a></li>
-                <li class="border-r border-white/10"><a href="proximos.html" class="block px-8 py-5 bg-[#ba007c]">Eventos</a></li>
-                <li><a href="contacto.html" class="block px-8 py-5 hover:bg-[#ba007c]">Contacto</a></li>
-            </ul>
+    <nav class="bg-[#555555] py-4">
+        <div class="container mx-auto px-8">
+            <a href="proximos.html" class="text-white font-black uppercase text-xs tracking-widest hover:text-[#ba007c] transition-colors">
+                ← VOLVER A EVENTOS
+            </a>
         </div>
     </nav>
 
@@ -46,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="md:w-1/2 grid grid-cols-1 gap-1">
+            <div class="md:w-1/2 flex flex-col gap-1">
                 <div class="bg-white p-6 border-l-4 border-[#ba007c]">
                     <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Ubicación</h4>
                     <p class="font-bold text-lg uppercase">Recinto Ferial Luis Adaro</p>
@@ -59,9 +68,34 @@
                     <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Entrada</h4>
                     <p class="font-black text-2xl text-[#ba007c]">Desde 5,00€</p>
                 </div>
-                <a href="#" class="bg-black text-white text-center py-6 font-black uppercase tracking-[0.3em] hover:bg-[#ba007c] transition-colors mt-2">
-                    Comprar Entradas
-                </a>
+
+                <div class="mt-2">
+                    <button onclick="toggleEntradas()" class="w-full bg-black text-white text-center py-6 font-black uppercase tracking-[0.3em] hover:bg-[#ba007c] transition-colors flex justify-center items-center gap-4">
+                        COMPRAR ENTRADAS <span id="flecha">▼</span>
+                    </button>
+                    
+                    <div id="panel-entradas" class="bg-white text-black border-x border-b border-gray-100">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-center border-b border-gray-50 pb-4">
+                                <div>
+                                    <p class="text-[10px] font-black uppercase">Entrada Día</p>
+                                    <p class="text-[9px] text-gray-400 uppercase italic">Acceso general 1 día</p>
+                                </div>
+                                <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-4 py-2 hover:bg-[#ba007c] hover:text-white transition">5,00€</button>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-[10px] font-black uppercase">Abono 10 Días</p>
+                                    <p class="text-[9px] text-gray-400 uppercase italic">Todo el festival</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[11px] font-black text-[#ba007c] mb-1">35,00€</p>
+                                    <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-4 py-2 hover:bg-[#ba007c] hover:text-white transition">COMPRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -71,10 +105,6 @@
                 <p class="text-gray-600 leading-relaxed mb-6 font-medium italic">
                     Metrópoli Gijón es el festival multidisciplinar más importante de Asturias. Durante diez días consecutivos, el recinto se convierte en el epicentro del ocio del norte de España.
                 </p>
-                <p class="text-gray-500 leading-relaxed mb-6 text-sm">
-                    El festival combina conciertos de primer nivel con la reconocida Comic Con, exposiciones temáticas, zonas de restauración (Food Trucks), competiciones de videojuegos y actividades para todos los públicos. Un evento que define el verano gijonés.
-                </p>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                     <div class="bg-gray-50 p-4 border-r border-[#ba007c]">
                         <span class="font-black text-[10px] uppercase block mb-1">Música</span>
@@ -92,6 +122,21 @@
     <footer class="bg-[#555555] py-16 text-center text-white">
         <p class="text-[10px] uppercase tracking-[0.5em] font-black opacity-50 italic">HAPPINESS&Co © 2026 • GIJÓN</p>
     </footer>
+
+    <script>
+        function toggleEntradas() {
+            const panel = document.getElementById('panel-entradas');
+            const flecha = document.getElementById('flecha');
+            
+            if (panel.style.maxHeight === "0px" || panel.style.maxHeight === "") {
+                panel.style.maxHeight = "500px";
+                flecha.style.transform = "rotate(180deg)";
+            } else {
+                panel.style.maxHeight = "0px";
+                flecha.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
 
 </body>
 </html>

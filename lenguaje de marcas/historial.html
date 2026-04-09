@@ -7,110 +7,118 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-pink-corp { background-color: #ba007c; }
+        .bg-gray-corp { background-color: #555555; }
+        .bg-rally-corp { background-color: #1e3a8a; }
         .bg-blue-corp { background-color: #009bdb; }
         .bg-orange-corp { background-color: #ff7b00; }
-        .bg-gray-corp { background-color: #555555; }
         
-        /* Efecto de blanco y negro para eventos pasados */
-        .event-past { filter: grayscale(100%); transition: all 0.5s ease; }
-        .event-past:hover { filter: grayscale(0%); transform: translateY(-5px); }
+        .event-img { filter: grayscale(100%); transition: 0.5s; }
+        .group:hover .event-img { filter: grayscale(0%); }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-    <header class="bg-white border-b border-gray-100">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <a href="index.html">
-                <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-14 md:h-20">
-            </a>
-            <div class="text-right">
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-black italic">Memoria Cultural</p>
-            </div>
-        </div>
-    </header>
-
-    <nav class="bg-gray-corp sticky top-0 z-50 shadow-xl">
-        <div class="container mx-auto">
-            <ul class="flex flex-wrap justify-center md:justify-start text-white font-bold uppercase text-[10px] md:text-xs tracking-widest">
-                <li class="border-r border-white/10"><a href="index.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Inicio</a></li>
-                <li class="border-r border-white/10"><a href="proximos.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Eventos</a></li>
-                <li class="border-r border-white/10"><a href="historial.html" class="block px-4 md:px-8 py-4 bg-pink-corp transition">Historial</a></li>
-                <li class="border-r border-white/10"><a href="sobre-nosotros.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Sobre Nosotros</a></li>
-                <li class="border-r border-white/10"><a href="fuentes.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Fuentes</a></li>
-                <li><a href="contacto.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Contacto</a></li>
-            </ul>
+    <nav class="bg-gray-corp text-white font-bold uppercase text-xs tracking-widest sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-8 flex gap-8">
+            <a href="index.html" class="py-5 hover:bg-pink-corp px-4 transition">Inicio</a>
+            <a href="proximos.html" class="py-5 hover:bg-pink-corp px-4 transition">Eventos</a>
+            <a href="historial.html" class="py-5 bg-pink-corp px-4 transition">Historial</a>
         </div>
     </nav>
 
-    <section class="bg-white py-12 border-b">
-        <div class="container mx-auto px-4">
-            <h2 class="text-5xl font-black uppercase tracking-tighter italic">Lo que <span class="text-gray-400">hemos vivido</span></h2>
-            <p class="text-gray-500 mt-2 uppercase tracking-widest text-sm font-bold italic">Archivo de eventos anteriores al 01 de Mayo de 2026</p>
-        </div>
-    </section>
-
-    <main class="container mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <article class="bg-white shadow-lg overflow-hidden group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="assets/img/teatrocine.jpeg" class="w-full h-full object-cover event-past" alt="Hamlet">
-                    <div class="absolute top-0 right-0 bg-blue-corp text-white px-4 py-2 font-bold text-xs uppercase">Teatro</div>
-                </div>
-                <div class="p-6 border-t-4 border-blue-corp">
-                    <p class="text-xs font-bold text-gray-400 mb-1">12 FEBRERO 2026</p>
-                    <h3 class="text-2xl font-black uppercase leading-tight mb-4">Teatro Jovellanos:<br>Hamlet</h3>
-                    <p class="text-gray-600 text-sm mb-6">Una producción magistral que agotó entradas en Gijón durante tres noches seguidas.</p>
-                    <a href="#" class="text-blue-corp font-black text-xs uppercase tracking-widest border-b-2 border-blue-corp pb-1 hover:text-gray-900 transition">Ver Galería Completa</a>
-                </div>
-            </article>
-
-            <article class="bg-white shadow-lg overflow-hidden group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600" class="w-full h-full object-cover event-past" alt="Concierto">
-                    <div class="absolute top-0 right-0 bg-pink-corp text-white px-4 py-2 font-bold text-xs uppercase">Música</div>
-                </div>
-                <div class="p-6 border-t-4 border-pink-corp">
-                    <p class="text-xs font-bold text-gray-400 mb-1">20 MARZO 2026</p>
-                    <h3 class="text-2xl font-black uppercase leading-tight mb-4">Noche de Jazz<br>en Poniente</h3>
-                    <p class="text-gray-600 text-sm mb-6">El frío de marzo no impidió que el jazz inundara la playa en un formato íntimo y acústico.</p>
-                    <a href="#" class="text-pink-corp font-black text-xs uppercase tracking-widest border-b-2 border-pink-corp pb-1 hover:text-gray-900 transition">Ver Galería Completa</a>
-                </div>
-            </article>
-
-            <article class="bg-white shadow-lg overflow-hidden group">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="assets/img/esccont.jpg" class="w-full h-full object-cover event-past" alt="Exposición">
-                    <div class="absolute top-0 right-0 bg-orange-corp text-white px-4 py-2 font-bold text-xs uppercase">Exposición</div>
-                </div>
-                <div class="p-6 border-t-4 border-orange-corp">
-                    <p class="text-xs font-bold text-gray-400 mb-1">05 ABRIL 2026</p>
-                    <h3 class="text-2xl font-black uppercase leading-tight mb-4">Escultura<br>Contemporánea</h3>
-                    <p class="text-gray-600 text-sm mb-6">Muestra de artistas noveles en la Universidad Laboral. Más de 2000 visitantes.</p>
-                    <a href="#" class="text-orange-corp font-black text-xs uppercase tracking-widest border-b-2 border-orange-corp pb-1 hover:text-gray-900 transition">Ver Galería Completa</a>
-                </div>
-            </article>
-
-        </div>
-    </main>
-
-    <section class="bg-gray-900 py-16">
+    <header class="py-16 bg-white border-b">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-white text-3xl font-black uppercase mb-6 italic">¿Quieres ver lo que viene?</h2>
-            <a href="proximos.html" class="inline-block bg-pink-corp text-white px-12 py-4 font-bold uppercase tracking-widest hover:scale-110 transition duration-300">Consultar Agenda Actual</a>
+            <h1 class="text-7xl font-black uppercase italic tracking-tighter mb-2">Historial</h1>
+            <p class="text-gray-400 font-bold uppercase text-xs tracking-[0.4em]">Memoria Cultural Gijón</p>
         </div>
-    </section>
+    </header>
 
-    <footer class="bg-white py-12 border-t">
-        <div class="container mx-auto text-center">
-            <img src="happines-and-co-propuesta-06.jpg" class="h-10 mx-auto mb-6 opacity-30 grayscale">
-            <div class="flex justify-center gap-6 text-[10px] font-black uppercase text-gray-400">
-                <a href="index.html" class="hover:text-pink-corp">Inicio</a>
-                <a href="contacto.html" class="hover:text-pink-corp">Contacto</a>
-                <a href="sobre-nosotros.html" class="hover:text-pink-corp">Nosotros</a>
+    <main class="container mx-auto px-4 py-12 max-w-4xl flex flex-col gap-4">
+
+        <div onclick="openModal('modalRally')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
+            <div class="md:w-2/5 h-44 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800" class="w-full h-full object-cover event-img">
+            </div>
+            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-rally-corp">
+                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-rally-corp transition-colors">Rally Princesa de Asturias</h3>
             </div>
         </div>
-    </footer>
+
+        <div onclick="openModal('modalTeatro')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
+            <div class="md:w-2/5 h-44 overflow-hidden">
+                <img src="assets/img/teatrocine.jpeg" class="w-full h-full object-cover event-img">
+            </div>
+            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-blue-corp">
+                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-blue-corp transition-colors">Hamlet: Jovellanos</h3>
+            </div>
+        </div>
+
+        <div onclick="openModal('modalMusica')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
+            <div class="md:w-2/5 h-44 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" class="w-full h-full object-cover event-img">
+            </div>
+            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-pink-corp">
+                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-pink-corp transition-colors">Jazz en Poniente</h3>
+            </div>
+        </div>
+
+        <div onclick="openModal('modalEscultura')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
+            <div class="md:w-2/5 h-44 overflow-hidden">
+                <img src="assets/img/esccont.jpg" class="w-full h-full object-cover event-img">
+            </div>
+            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-orange-corp">
+                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-orange-corp transition-colors">Escultura Contemporánea</h3>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="modalRally" class="modal flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
+            <button onclick="closeModal('modalRally')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-rally-corp pb-2 inline-block">Rally Princesa de Asturias</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">Gijón vibró con la 62ª edición. Los tramos de montaña asturianos pusieron a prueba a los mejores pilotos del país. Un éxito de público sin precedentes en el puerto.</p>
+        </div>
+    </div>
+
+    <div id="modalTeatro" class="modal flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
+            <button onclick="closeModal('modalTeatro')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-blue-corp pb-2 inline-block">Hamlet: Jovellanos</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">Lleno absoluto en las tres funciones. La crítica destacó la arriesgada propuesta visual y el talento del elenco local que elevó el clásico de Shakespeare.</p>
+        </div>
+    </div>
+
+    <div id="modalMusica" class="modal flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
+            <button onclick="closeModal('modalMusica')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-pink-corp pb-2 inline-block">Jazz en Poniente</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">Un festival íntimo sobre la arena de Gijón que reunió a los mejores exponentes del jazz nacional bajo la luz de la luna y el sonido del mar.</p>
+        </div>
+    </div>
+
+    <div id="modalEscultura" class="modal flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
+            <button onclick="closeModal('modalEscultura')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-orange-corp pb-2 inline-block">Escultura Contemporánea</h2>
+            <p class="text-gray-700 leading-relaxed text-lg">Muestra colectiva en La Laboral que exploró nuevos materiales industriales, convirtiendo el patio central en un museo de acero y hormigón.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+        window.onclick = function(event) { if (event.target.className.includes('modal')) { event.target.style.display = "none"; document.body.style.overflow = "auto"; } }
+    </script>
 
 </body>
 </html>

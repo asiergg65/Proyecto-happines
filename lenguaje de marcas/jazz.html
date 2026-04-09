@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIJÓN JAZZ FESTIVAL | H&Co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Control del desplegable */
+        #panel-entradas {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        #flecha {
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <header class="bg-white border-b border-gray-100">
+        <div class="container mx-auto px-4 py-8 flex justify-between items-center">
+            <a href="index.html">
+                <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo H&Co" class="h-16 md:h-20">
+            </a>
+            <div class="text-right">
+                <p class="text-gray-400 font-black text-[10px] uppercase tracking-[0.3em]">Gijón / Xixón</p>
+                <p class="text-gray-500 italic text-xs mt-1">Orden en el océano del ocio</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-[#555555] py-4">
+        <div class="container mx-auto px-8">
+            <a href="proximos.html" class="text-white font-black uppercase text-xs tracking-widest hover:text-[#ba007c] transition-colors">
+                ← VOLVER A EVENTOS
+            </a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <div class="flex flex-col gap-1">
+            
+            <div class="bg-white p-10 border-l-8 border-[#ba007c] shadow-sm">
+                <span class="text-[#ba007c] font-black uppercase text-[10px] tracking-[0.4em] italic block mb-2">Música / Jazz</span>
+                <h1 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mt-2 leading-none">GIJÓN JAZZ FESTIVAL</h1>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-1">
+                <div class="md:w-2/3 bg-gray-200 h-96">
+                    <img src="assets/img/jazz.jpeg" class="w-full h-full object-cover" alt="Gijón Jazz Festival">
+                </div>
+                
+                <div class="md:w-1/3 bg-black text-white p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-[9px] font-black text-[#ba007c] uppercase tracking-widest">Cuándo</p>
+                            <p class="font-bold uppercase text-lg leading-tight">07 al 15 de Nov, 2026</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-black text-[#ba007c] uppercase tracking-widest">Dónde</p>
+                            <p class="font-bold uppercase text-lg leading-tight">Teatro Jovellanos</p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-black text-[#ba007c] uppercase tracking-widest">Precio</p>
+                            <p class="font-black text-3xl italic text-[#ba007c]">Desde 18,00€</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button onclick="toggleEntradas()" class="w-full bg-[#ba007c] text-white text-center py-5 font-black uppercase text-[11px] tracking-widest hover:bg-white hover:text-black transition flex justify-center items-center gap-3">
+                            COMPRAR ENTRADAS <span id="flecha">▼</span>
+                        </button>
+                        
+                        <div id="panel-entradas" class="bg-white text-black">
+                            <div class="p-5 space-y-4 border-x border-b border-gray-100">
+                                <div class="flex justify-between items-center border-b border-gray-50 pb-3">
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase">Entrada de Día</p>
+                                        <p class="text-[9px] text-gray-400 uppercase italic">Zonas A, B y C</p>
+                                    </div>
+                                    <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-3 py-1 hover:bg-[#ba007c] hover:text-white transition">18,00€</button>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-[10px] font-black uppercase">Abono Completo</p>
+                                        <p class="text-[9px] text-gray-400 uppercase italic">Todos los conciertos</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-[11px] font-black text-[#ba007c] mb-1">90,00€</p>
+                                        <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-3 py-1 hover:bg-[#ba007c] hover:text-white transition">COMPRAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-10 shadow-sm mt-10">
+                <h2 class="text-2xl font-black uppercase italic mb-6 border-b-2 border-black inline-block pb-1">Sobre el Festival</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <p class="text-gray-600 leading-relaxed italic text-sm">
+                        El Gijón Jazz Festival se ha consolidado como una cita ineludible en el norte de España. El Teatro Jovellanos acoge a figuras internacionales y emergentes del género, creando una atmósfera única y sofisticada.
+                    </p>
+                    <ul class="space-y-3 text-[11px] font-black uppercase tracking-widest text-gray-500">
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Conciertos en Teatro Jovellanos</li>
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Jam Sessions y actividades</li>
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Artistas internacionales confirmados</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-16 text-center bg-white border-t border-gray-100 mt-12">
+        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 italic">HAPPINESS&Co © 2026</p>
+    </footer>
+
+    <script>
+        function toggleEntradas() {
+            const panel = document.getElementById('panel-entradas');
+            const flecha = document.getElementById('flecha');
+            
+            if (panel.style.maxHeight === "0px" || panel.style.maxHeight === "") {
+                panel.style.maxHeight = "500px"; // Altura máxima aproximada del contenido abierto
+                flecha.style.transform = "rotate(180deg)";
+            } else {
+                panel.style.maxHeight = "0px";
+                flecha.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
+
+</body>
+</html>

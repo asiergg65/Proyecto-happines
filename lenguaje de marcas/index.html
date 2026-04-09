@@ -11,6 +11,7 @@
         .text-pink-corp { color: #ba007c; }
         .bg-blue-corp { background-color: #009bdb; }
         .bg-orange-corp { background-color: #ff7b00; }
+        .bg-green-corp { background-color: #2d5a27; } /* Verde para Extras/Sidra */
         .bg-gray-corp { background-color: #555555; }
         
         .hero-gradient {
@@ -47,64 +48,82 @@
     </nav>
 
     <section class="relative h-[70vh] w-full overflow-hidden bg-black">
-        <img src="assets/img/festival.jpg" 
-             class="w-full h-full object-cover opacity-70" alt="Evento destacado">
+        <img src="assets/img/festival.jpg" class="w-full h-full object-cover opacity-70" alt="Evento destacado">
         <div class="absolute inset-0 hero-gradient"></div>
         <div class="absolute bottom-0 left-0 w-full p-8 md:p-20 text-white">
             <p class="bg-pink-corp inline-block px-4 py-1 text-sm font-bold uppercase mb-4 tracking-widest">Destacado</p>
-            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none tracking-tighter mb-4">Música en  <br>Asturias 2026</h1>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none tracking-tighter mb-4">Música en <br>Asturias 2026</h1>
             <p class="text-xl max-w-2xl font-light opacity-90">Descubre los sonidos que inundarán Asturias este verano. Entradas ya disponibles para los suscriptores.</p>
         </div>
     </section>
 
     <section class="container mx-auto px-4 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
             
-            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+            <a href="musica.html" class="group relative h-80 overflow-hidden bg-black">
                 <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
                 <div class="absolute inset-0 border-b-8 border-pink-corp"></div>
                 <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Música</div>
             </a>
 
-            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+            <a href="teatro.html" class="group relative h-80 overflow-hidden bg-black">
                 <img src="assets/img/teatrocine.jpeg" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
                 <div class="absolute inset-0 border-b-8 border-blue-corp"></div>
                 <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Teatro & Cine</div>
             </a>
 
-            <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+            <a href="exposiciones.html" class="group relative h-80 overflow-hidden bg-black">
                 <img src="assets/img/expo.jfif" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
                 <div class="absolute inset-0 border-b-8 border-orange-corp"></div>
                 <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Exposiciones</div>
             </a>
-             <a href="proximos.html" class="group relative h-80 overflow-hidden bg-black">
+
+            <a href="extras.html" class="group relative h-80 overflow-hidden bg-black">
                 <img src="assets/img/CACHOPO.jpeg" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                <div class="absolute inset-0 border-b-8 border-orange-corp"></div>
+                <div class="absolute inset-0 border-b-8 border-green-corp"></div>
                 <div class="absolute bottom-6 left-6 text-white text-3xl font-black uppercase italic">Extras</div>
-            </a
+            </a>
 
         </div>
     </section>
 
-    <section class="bg-gray-50 py-20">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-4xl font-black uppercase tracking-tighter mb-6">Un Océano de <span class="text-pink-corp">Posibilidades</span></h2>
-                <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                    HAPPINESS&Co nace de la necesidad de estructurar la inmensa oferta cultural de nuestra ciudad. Música, artes escénicas y plásticas en un solo lugar.
+    <section class="bg-gray-50 py-20 border-y border-gray-100">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <p class="text-pink-corp font-bold uppercase tracking-widest text-sm">Cultura Local</p>
+                <h2 class="text-5xl font-black uppercase tracking-tighter leading-none text-gray-900">Tu Agenda en <br><span class="text-gray-400">Gijón / Xixón</span></h2>
+                <p class="text-gray-700 text-lg leading-relaxed max-w-xl">
+                    HAPPINESS&Co es tu brújula cultural. Navegamos por la densa oferta de Gijón para traerte una selección exclusiva de lo mejor en <strong class="font-bold">música, artes escénicas y plásticas</strong>. No te pierdas nada de lo que sucede en tu ciudad.
                 </p>
-                <a href="sobre-nosotros.html" class="inline-block border-2 border-gray-900 px-10 py-4 font-bold uppercase hover:bg-gray-900 hover:text-white transition">Conócenos</a>
+                <div class="pt-4">
+                    <a href="proximos.html" class="inline-flex items-center gap-3 bg-gray-900 text-white px-10 py-4 font-bold uppercase hover:bg-pink-corp transition shadow-lg text-sm tracking-widest">
+                        Explorar Eventos <span>→</span>
+                    </a>
+                </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400" class="rounded-lg shadow-xl translate-y-8">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" class="rounded-lg shadow-xl">
+            
+            <div class="relative grid grid-cols-2 gap-4">
+                <div class="relative group overflow-hidden rounded-lg shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1514302240736-b1fee5985889?w=400&q=80" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110" 
+                         alt="Cultura Gijón">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <p class="absolute bottom-4 left-4 text-white font-bold uppercase text-xs tracking-wider">Artes Escénicas</p>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-2xl translate-y-12">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80" 
+                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110" 
+                         alt="Festivales Asturias">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <p class="absolute bottom-4 left-4 text-white font-bold uppercase text-xs tracking-wider">Festivales</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-gray-corp text-white py-16">
         <div class="container mx-auto px-4 text-center">
-            <img src="assets/img/happines-and-co-propuesta-06.jpg" alt="Logo Footer" class="h-10 mx-auto mb-10 ">
+            <img src="assets/img/happines-and-co-propuesta-06.jpg" alt="Logo Footer" class="h-10 mx-auto mb-10">
             <div class="flex justify-center gap-8 mb-10 text-sm font-bold uppercase tracking-widest">
                 <a href="index.html" class="hover:text-pink-corp transition">Inicio</a>
                 <a href="contacto.html" class="hover:text-pink-corp transition">Contacto</a>
@@ -113,19 +132,6 @@
             <p class="text-xs text-gray-400">&copy; 2026 HAPPINESS&Co Gijón. Proyecto Educativo de Lenguajes de Marcas.</p>
         </div>
     </footer>
-    <div class="relative group overflow-hidden shadow-2xl rounded-sm">
-    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-    <div class="absolute bottom-0 p-8">
-        <span class="bg-[#ba007c] text-white px-3 py-1 text-[10px] font-black uppercase italic tracking-widest">Sold Out</span>
-        <h3 class="text-white text-4xl font-black uppercase mt-2 leading-none">Metrópoli 2026</h3>
-        <p class="text-gray-300 text-sm mt-4 font-light">El evento más esperado del año. Música, cómics y cultura pop.</p>
-        
-        <a href="metropoli.html" class="inline-block mt-4 text-white text-xs font-bold uppercase border-b-2 border-[#ba007c] hover:bg-[#ba007c] hover:px-2 transition-all">
-            Ver información del evento →
-        </a>
-    </div>
-</div>
 
 </body>
 </html>
