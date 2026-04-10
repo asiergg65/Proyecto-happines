@@ -6,15 +6,13 @@
     <title>METRÓPOLI GIJÓN | HAPPINESS&Co</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Control del desplegable */
         #panel-entradas {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.7s ease-in-out;
         }
-        #flecha {
-            transition: transform 0.3s;
-        }
+        #flecha { transition: transform 0.3s; }
+        .payment-btn:hover { transform: scale(1.02); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
@@ -41,7 +39,7 @@
 
     <section class="bg-white py-12 border-b">
         <div class="container mx-auto px-4">
-            <span class="text-[#ba007c] font-black uppercase text-[10px] tracking-[0.4em] italic block mb-2">Música / Cultura Pop</span>
+            <span class="text-[#ba007c] font-black uppercase text-[10px] tracking-[0.4em] italic block mb-2">Festival / Cultura Pop</span>
             <h1 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">METRÓPOLI GIJÓN</h1>
         </div>
     </section>
@@ -51,7 +49,7 @@
             
             <div class="md:w-1/2">
                 <div class="aspect-video bg-gray-200 overflow-hidden border-b-8 border-[#ba007c]">
-                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800" class="w-full h-full object-cover">
                 </div>
             </div>
 
@@ -62,35 +60,54 @@
                 </div>
                 <div class="bg-white p-6 border-l-4 border-[#ba007c]">
                     <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Fecha</h4>
-                    <p class="font-bold text-lg uppercase">26 de Junio al 5 de Julio, 2026</p>
+                    <p class="font-bold text-lg uppercase">28 Junio al 7 Julio, 2026</p>
                 </div>
                 <div class="bg-white p-6 border-l-4 border-[#ba007c]">
-                    <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Entrada</h4>
-                    <p class="font-black text-2xl text-[#ba007c]">Desde 5,00€</p>
+                    <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Abono 10 Días</h4>
+                    <p class="font-black text-2xl text-[#ba007c]">Desde 35,00€</p>
                 </div>
 
                 <div class="mt-2">
                     <button onclick="toggleEntradas()" class="w-full bg-black text-white text-center py-6 font-black uppercase tracking-[0.3em] hover:bg-[#ba007c] transition-colors flex justify-center items-center gap-4">
-                        COMPRAR ENTRADAS <span id="flecha">▼</span>
+                        COMPRAR ABONOS <span id="flecha">▼</span>
                     </button>
                     
-                    <div id="panel-entradas" class="bg-white text-black border-x border-b border-gray-100">
-                        <div class="p-6 space-y-4">
-                            <div class="flex justify-between items-center border-b border-gray-50 pb-4">
-                                <div>
-                                    <p class="text-[10px] font-black uppercase">Entrada Día</p>
-                                    <p class="text-[9px] text-gray-400 uppercase italic">Acceso general 1 día</p>
+                    <div id="panel-entradas" class="bg-[#f5f7f9] border-t border-gray-200">
+                        <div class="p-6 md:p-8">
+                            <div class="flex flex-col gap-6">
+                                <div class="bg-white p-4 rounded border border-gray-200 shadow-sm flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-black text-[10px] uppercase italic">Abono Completo Metrópoli</h4>
+                                        <p class="text-[12px] font-black text-[#ba007c]">35,00€ / ud.</p>
+                                    </div>
+                                    <div class="flex items-center border-2 border-gray-100 rounded-md overflow-hidden bg-gray-50">
+                                        <button onclick="updateTicket(-1, 35)" class="px-4 py-2 hover:bg-[#ba007c] hover:text-white transition-all font-black">-</button>
+                                        <span id="ticket-qty" class="px-6 font-black text-lg">1</span>
+                                        <button onclick="updateTicket(1, 35)" class="px-4 py-2 hover:bg-[#ba007c] hover:text-white transition-all font-black">+</button>
+                                    </div>
                                 </div>
-                                <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-4 py-2 hover:bg-[#ba007c] hover:text-white transition">5,00€</button>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <p class="text-[10px] font-black uppercase">Abono 10 Días</p>
-                                    <p class="text-[9px] text-gray-400 uppercase italic">Todo el festival</p>
+                                
+                                <div class="bg-white p-6 rounded border border-gray-200 shadow-sm space-y-4">
+                                    <h5 class="text-[9px] font-black uppercase text-gray-400 tracking-[0.2em] italic">Datos del Comprador</h5>
+                                    <input id="userName" type="text" placeholder="NOMBRE COMPLETO" class="w-full bg-gray-50 border-none p-4 text-[10px] font-black uppercase focus:ring-2 focus:ring-[#ba007c] outline-none">
+                                    <input id="userEmail" type="email" placeholder="CORREO ELECTRÓNICO" class="w-full bg-gray-50 border-none p-4 text-[10px] font-black uppercase focus:ring-2 focus:ring-[#ba007c] outline-none">
                                 </div>
-                                <div class="text-right">
-                                    <p class="text-[11px] font-black text-[#ba007c] mb-1">35,00€</p>
-                                    <button class="text-[9px] font-black text-[#ba007c] border border-[#ba007c] px-4 py-2 hover:bg-[#ba007c] hover:text-white transition">COMPRAR</button>
+
+                                <div class="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                                    <div class="bg-blue-600 p-2 text-white text-center">
+                                        <p class="text-[8px] font-black uppercase tracking-[0.3em]">Resumen y Pago Seguro</p>
+                                    </div>
+                                    <div class="p-6 space-y-4">
+                                        <div class="flex justify-between items-end border-b pb-4">
+                                            <span class="text-xs font-black uppercase italic text-gray-400">Total Abonos (x<span id="resumen-qty">1</span>)</span>
+                                            <span id="total-val" class="text-3xl font-black italic text-blue-700 leading-none">35€</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 gap-2">
+                                            <button onclick="procesarPago('tarjeta')" class="payment-btn w-full bg-black text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">💳 Pagar con Tarjeta</button>
+                                            <button onclick="procesarPago('bizum')" class="payment-btn w-full bg-[#3fe5b5] text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">📱 Pagar con Bizum</button>
+                                            <button onclick="procesarPago('paypal')" class="payment-btn w-full bg-[#0070ba] text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">P PayPal</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,20 +117,27 @@
         </div>
 
         <div class="mt-12 bg-white p-10 shadow-sm border border-gray-100">
-            <h2 class="text-2xl font-black uppercase italic mb-6 border-b-2 border-black inline-block pb-1">Descripción del Evento</h2>
+            <h2 class="text-2xl font-black uppercase italic mb-6 border-b-2 border-black inline-block pb-1">Sobre Metrópoli</h2>
             <div class="max-w-4xl">
                 <p class="text-gray-600 leading-relaxed mb-6 font-medium italic">
-                    Metrópoli Gijón es el festival multidisciplinar más importante de Asturias. Durante diez días consecutivos, el recinto se convierte en el epicentro del ocio del norte de España.
+                    Metrópoli Gijón es el festival de festivales. 10 días de música en directo, Comic Con, zona de videojuegos, market, gastronomía y las mejores exposiciones en el Recinto Ferial.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                     <div class="bg-gray-50 p-4 border-r border-[#ba007c]">
                         <span class="font-black text-[10px] uppercase block mb-1">Música</span>
-                        <p class="text-xs text-gray-500 uppercase font-bold tracking-tighter">Más de 20 conciertos en directo.</p>
+                        <p class="text-xs text-gray-500 uppercase font-bold tracking-tighter">Más de 20 conciertos en el escenario principal.</p>
                     </div>
                     <div class="bg-gray-50 p-4 border-r border-[#ba007c]">
                         <span class="font-black text-[10px] uppercase block mb-1">Comic Con</span>
-                        <p class="text-xs text-gray-500 uppercase font-bold tracking-tighter">Autores internacionales y cosplay.</p>
+                        <p class="text-xs text-gray-500 uppercase font-bold tracking-tighter">Encuentros con autores internacionales y desfiles de cosplay.</p>
                     </div>
+                </div>
+                <div class="mt-8">
+                    <ul class="space-y-3 text-[11px] font-black uppercase tracking-widest text-gray-500">
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Acceso ilimitado durante los 10 días</li>
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Incluye entrada a la Comic Con y Exposiciones</li>
+                        <li class="flex items-center gap-2"><span class="text-[#ba007c]">■</span> Pulsera de acceso re-entrada incluida</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -124,19 +148,36 @@
     </footer>
 
     <script>
+        let quantity = 1;
         function toggleEntradas() {
             const panel = document.getElementById('panel-entradas');
             const flecha = document.getElementById('flecha');
-            
             if (panel.style.maxHeight === "0px" || panel.style.maxHeight === "") {
-                panel.style.maxHeight = "500px";
+                panel.style.maxHeight = "2000px";
                 flecha.style.transform = "rotate(180deg)";
             } else {
                 panel.style.maxHeight = "0px";
                 flecha.style.transform = "rotate(0deg)";
             }
         }
+        function updateTicket(change, price) {
+            quantity = Math.max(1, Math.min(10, quantity + change));
+            const total = quantity * price;
+            document.getElementById('ticket-qty').innerText = quantity;
+            document.getElementById('resumen-qty').innerText = quantity;
+            document.getElementById('total-val').innerText = total + "€";
+        }
+        function procesarPago(metodo) {
+            const nombre = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            if(nombre === "" || email === "") {
+                alert("Por favor, rellena tus datos antes de continuar.");
+                return;
+            }
+            if(metodo === 'paypal') window.location.href = "https://www.paypal.com/checkoutnow";
+            else if(metodo === 'bizum') window.location.href = "https://www.bizum.es";
+            else window.location.href = "https://www.redsys.es";
+        }
     </script>
-
 </body>
 </html>

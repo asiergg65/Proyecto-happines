@@ -21,32 +21,24 @@
     </style>
 </head>
 <body class="bg-white text-gray-900">
-
-    <header class="border-b border-gray-100">
-        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <a href="index.html">
-                <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo HAPPINESS&Co" class="h-14 md:h-20">
-            </a>
-            <div class="hidden md:block text-right">
-                <p class="text-xs uppercase tracking-widest text-gray-400 font-bold">Gijón / Xixón</p>
-                <p class="text-sm italic text-gray-500">Orden en el océano del ocio</p>
-            </div>
+<header class="w-full bg-white sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center md:items-end">
+        <div class="flex-shrink-0 mb-6 md:mb-0"><a href="index.html"><img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo" class="h-14 md:h-20 w-auto object-contain"></a></div>
+        <div class="flex flex-col items-center md:items-end gap-4">
+            <p class="text-[9px] font-bold tracking-[0.4em] text-gray-300 uppercase leading-none md:mr-1">GIJÓN / XIXÓN</p>
+            <nav class="bg-gray-100 rounded-full px-6 py-3 border border-gray-200">
+                <ul class="flex flex-wrap justify-center md:justify-end gap-x-6 md:gap-x-10">
+                    <li><a href="index.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-black border-b-2 border-black">Inicio</a></li>
+                    <li><a href="proximos.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Eventos</a></li>
+                    <li><a href="historial.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Historial</a></li>
+                    <li><a href="sobre-nosotros.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Nosotros</a></li>
+                    <li><a href="fuentes.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Fuentes</a></li>
+                    <li><a href="contacto.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-    </header>
-
-    <nav class="bg-gray-corp sticky top-0 z-50 shadow-xl">
-        <div class="container mx-auto">
-            <ul class="flex flex-wrap justify-center md:justify-start text-white font-bold uppercase text-[10px] md:text-xs tracking-tighter md:tracking-widest">
-                <li class="border-r border-white/10"><a href="index.html" class="block px-4 md:px-8 py-4 bg-pink-corp transition">Inicio</a></li>
-                <li class="border-r border-white/10"><a href="proximos.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Eventos</a></li>
-                <li class="border-r border-white/10"><a href="historial.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Historial</a></li>
-                <li class="border-r border-white/10"><a href="sobre-nosotros.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Sobre Nosotros</a></li>
-                <li class="border-r border-white/10"><a href="fuentes.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Fuentes</a></li>
-                <li><a href="contacto.html" class="block px-4 md:px-8 py-4 hover:bg-pink-corp transition">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-
+    </div>
+</header>
     <section class="relative h-[70vh] w-full overflow-hidden bg-black">
         <img src="assets/img/festival.jpg" class="w-full h-full object-cover opacity-70" alt="Evento destacado">
         <div class="absolute inset-0 hero-gradient"></div>

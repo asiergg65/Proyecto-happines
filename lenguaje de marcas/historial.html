@@ -3,122 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H&Co | Historial de Eventos</title>
+    <title>H&Co | Historial Oficial</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .bg-pink-corp { background-color: #ba007c; }
         .bg-gray-corp { background-color: #555555; }
-        .bg-rally-corp { background-color: #1e3a8a; }
-        .bg-blue-corp { background-color: #009bdb; }
-        .bg-orange-corp { background-color: #ff7b00; }
+        .bg-pink-corp { background-color: #ba007c; }
         
-        .event-img { filter: grayscale(100%); transition: 0.5s; }
-        .group:hover .event-img { filter: grayscale(0%); }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(4px);
+        .img-bw { 
+            filter: grayscale(100%); 
+            transition: all 0.5s ease; 
         }
+        .event-row:hover .img-bw { 
+            filter: grayscale(0%); 
+        }
+
+        .gallery-container { position: relative; width: 100%; height: 180px; overflow: hidden; background: #000; border-radius: 2px; }
+        .gallery-slide { display: none; width: 100%; height: 100%; object-fit: cover; }
+        .gallery-slide.active { display: block; }
+        
+        .nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0,0,0,0.4); color: white; border: none;
+            width: 28px; height: 28px; cursor: pointer; z-index: 10;
+            transition: 0.3s; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;
+        }
+        .nav-btn:hover { background: #ba007c; }
+        .prev { left: 0; }
+        .next { right: 0; }
+
+        .star-rating { color: #fbbf24; font-size: 0.7rem; }
+        .sidebar { position: sticky; top: 80px; height: fit-content; }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-white text-gray-900 font-sans">
 
-    <nav class="bg-gray-corp text-white font-bold uppercase text-xs tracking-widest sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-8 flex gap-8">
-            <a href="index.html" class="py-5 hover:bg-pink-corp px-4 transition">Inicio</a>
-            <a href="proximos.html" class="py-5 hover:bg-pink-corp px-4 transition">Eventos</a>
-            <a href="historial.html" class="py-5 bg-pink-corp px-4 transition">Historial</a>
+   
+
+<header class="w-full bg-white sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center md:items-end">
+        <div class="flex-shrink-0 mb-6 md:mb-0"><a href="index.html"><img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo" class="h-14 md:h-20 w-auto object-contain"></a></div>
+        <div class="flex flex-col items-center md:items-end gap-4">
+            <p class="text-[9px] font-bold tracking-[0.4em] text-gray-300 uppercase leading-none md:mr-1">GIJÓN / XIXÓN</p>
+            <nav class="bg-gray-100 rounded-full px-6 py-3 border border-gray-200">
+                <ul class="flex flex-wrap justify-center md:justify-end gap-x-6 md:gap-x-10">
+                    <li><a href="index.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Inicio</a></li>
+                    <li><a href="proximos.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Eventos</a></li>
+                    <li><a href="historial.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-black border-b-2 border-black">Historial</a></li>
+                    <li><a href="sobre-nosotros.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Nosotros</a></li>
+                    <li><a href="fuentes.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Fuentes</a></li>
+                    <li><a href="contacto.html" class="inline-block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-black transition-all">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <header class="py-16 bg-white border-b">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-7xl font-black uppercase italic tracking-tighter mb-2">Historial</h1>
-            <p class="text-gray-400 font-bold uppercase text-xs tracking-[0.4em]">Memoria Cultural Gijón</p>
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <div class="flex-grow flex flex-col gap-8">
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-1">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-1', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="assets/img/rally.jpg" class="gallery-slide active img-bw">
+                        <img src="assets/img/r2.jpg" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-1', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Septiembre 2025</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1">Rally Princesa de Asturias</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Gestión de tramos y coordinación de seguridad para la edición más multitudinaria.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-2">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-2', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="assets/img/hamlet.jpg" class="gallery-slide active img-bw">
+                        <img src="assets/img/teatro.jpeg" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-2', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Febrero 2026</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Hamlet: Teatro Jovellanos</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Producción técnica integral con lleno total durante tres noches.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-3">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-3', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="assets/img/jzzz2.jpg" class="gallery-slide active img-bw">
+                        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-3', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Marzo 2026</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Jazz en Poniente</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Instalación de sonido de alta fidelidad y ambientación lumínica en playa.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-4">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-4', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="assets/img/expoxxi.jpeg" class="gallery-slide active img-bw">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-4', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Mayo 2025</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Expo Escultura XXI</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Montaje de exposición industrial en el patio de La Laboral.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-5">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-5', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" class="gallery-slide active img-bw">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-5', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Agosto 2025</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Cine en el Musel</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Ciclo de cine clásico con sistema de audio inalámbrico.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start border-b pb-6 border-gray-50">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-6">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-6', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600" class="gallery-slide active img-bw">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-6', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Junio 2025</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Fashion Gijón</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Producción técnica de pasarela para diseñadores locales.</p>
+                    </div>
+                </div>
+
+                <div class="event-row flex flex-col md:flex-row gap-6 items-start pb-6">
+                    <div class="w-full md:w-60 shrink-0 gallery-container" id="gal-7">
+                        <button class="nav-btn prev" onclick="changeSlide('gal-7', -1)"><i class="fas fa-chevron-left"></i></button>
+                        <img src="assets/img/evento.jpeg" class="gallery-slide active img-bw">
+                        <img src="assets/img/evvvv.jpg" class="gallery-slide img-bw">
+                        <button class="nav-btn next" onclick="changeSlide('gal-7', 1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex-grow pt-1">
+                        <span class="text-gray-400 font-black text-[9px] uppercase tracking-widest italic">Abril 2025</span>
+                        <h2 class="text-xl font-black uppercase italic tracking-tighter my-1 text-gray-800">Congreso Tech Asturias</h2>
+                        <p class="text-gray-500 italic text-xs leading-relaxed">Apoyo tecnológico y streaming para el encuentro digital.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="lg:w-80">
+                <div class="sidebar flex flex-col gap-10">
+                    <div>
+                        <h3 class="text-[10px] font-black uppercase tracking-widest text-pink-corp border-b border-gray-100 pb-2 mb-4 italic">Reseñas Profesionales</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="bg-gray-50 p-4 border-l-2 border-pink-corp">
+                                <div class="star-rating mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="text-[10px] text-gray-600 italic leading-tight">"Una ejecución impecable en el Rally. Expertos en logística."</p>
+                                <span class="text-[8px] font-bold uppercase text-gray-400 mt-2 block">— El Comercio</span>
+                            </div>
+                            <div class="bg-gray-50 p-4 border-l-2 border-gray-corp">
+                                <div class="star-rating mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <p class="text-[10px] text-gray-600 italic leading-tight">"Nivel técnico digno de producción nacional."</p>
+                                <span class="text-[8px] font-bold uppercase text-gray-400 mt-2 block">— La Nueva España</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[10px] font-black uppercase tracking-widest text-gray-400 border-b border-gray-100 pb-2 mb-4 italic">Lo más buscado</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-50 text-[9px] font-bold uppercase border border-gray-100 cursor-default">Motor</span>
+                            <span class="px-2 py-1 bg-gray-50 text-[9px] font-bold uppercase border border-gray-100 cursor-default">Cultura</span>
+                            <span class="px-2 py-1 bg-gray-50 text-[9px] font-bold uppercase border border-gray-100 cursor-default">Seguridad</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-corp p-6 text-white italic">
+                        <h3 class="text-[11px] font-black uppercase not-italic mb-2">Solidez y Experiencia</h3>
+                        <p class="text-[10px] leading-relaxed opacity-70 mb-4">Nuestro historial nos avala. Estamos listos para tu próximo reto.</p>
+                        <a href="contacto.html" class="inline-block border border-white/30 px-3 py-1 text-[9px] font-bold uppercase hover:bg-pink-corp hover:border-pink-corp hover:text-white transition">Contáctanos ahora</a>
+                    </div>
+                </div>
+            </aside>
         </div>
-    </header>
-
-    <main class="container mx-auto px-4 py-12 max-w-4xl flex flex-col gap-4">
-
-        <div onclick="openModal('modalRally')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
-            <div class="md:w-2/5 h-44 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800" class="w-full h-full object-cover event-img">
-            </div>
-            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-rally-corp">
-                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-rally-corp transition-colors">Rally Princesa de Asturias</h3>
-            </div>
-        </div>
-
-        <div onclick="openModal('modalTeatro')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
-            <div class="md:w-2/5 h-44 overflow-hidden">
-                <img src="assets/img/teatrocine.jpeg" class="w-full h-full object-cover event-img">
-            </div>
-            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-blue-corp">
-                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-blue-corp transition-colors">Hamlet: Jovellanos</h3>
-            </div>
-        </div>
-
-        <div onclick="openModal('modalMusica')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
-            <div class="md:w-2/5 h-44 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" class="w-full h-full object-cover event-img">
-            </div>
-            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-pink-corp">
-                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-pink-corp transition-colors">Jazz en Poniente</h3>
-            </div>
-        </div>
-
-        <div onclick="openModal('modalEscultura')" class="bg-white flex flex-col md:flex-row shadow-sm overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
-            <div class="md:w-2/5 h-44 overflow-hidden">
-                <img src="assets/img/esccont.jpg" class="w-full h-full object-cover event-img">
-            </div>
-            <div class="md:w-3/5 p-10 flex items-center border-l-8 border-orange-corp">
-                <h3 class="text-4xl font-black uppercase text-gray-800 tracking-tighter italic group-hover:text-orange-corp transition-colors">Escultura Contemporánea</h3>
-            </div>
-        </div>
-
     </main>
 
-    <div id="modalRally" class="modal flex items-center justify-center p-4">
-        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
-            <button onclick="closeModal('modalRally')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
-            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-rally-corp pb-2 inline-block">Rally Princesa de Asturias</h2>
-            <p class="text-gray-700 leading-relaxed text-lg">Gijón vibró con la 62ª edición. Los tramos de montaña asturianos pusieron a prueba a los mejores pilotos del país. Un éxito de público sin precedentes en el puerto.</p>
-        </div>
-    </div>
-
-    <div id="modalTeatro" class="modal flex items-center justify-center p-4">
-        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
-            <button onclick="closeModal('modalTeatro')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
-            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-blue-corp pb-2 inline-block">Hamlet: Jovellanos</h2>
-            <p class="text-gray-700 leading-relaxed text-lg">Lleno absoluto en las tres funciones. La crítica destacó la arriesgada propuesta visual y el talento del elenco local que elevó el clásico de Shakespeare.</p>
-        </div>
-    </div>
-
-    <div id="modalMusica" class="modal flex items-center justify-center p-4">
-        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
-            <button onclick="closeModal('modalMusica')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
-            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-pink-corp pb-2 inline-block">Jazz en Poniente</h2>
-            <p class="text-gray-700 leading-relaxed text-lg">Un festival íntimo sobre la arena de Gijón que reunió a los mejores exponentes del jazz nacional bajo la luz de la luna y el sonido del mar.</p>
-        </div>
-    </div>
-
-    <div id="modalEscultura" class="modal flex items-center justify-center p-4">
-        <div class="bg-white max-w-xl w-full p-12 relative shadow-2xl">
-            <button onclick="closeModal('modalEscultura')" class="absolute top-4 right-6 text-3xl font-light hover:rotate-90 transition-transform">&times;</button>
-            <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-6 border-b-4 border-orange-corp pb-2 inline-block">Escultura Contemporánea</h2>
-            <p class="text-gray-700 leading-relaxed text-lg">Muestra colectiva en La Laboral que exploró nuevos materiales industriales, convirtiendo el patio central en un museo de acero y hormigón.</p>
-        </div>
-    </div>
-
     <script>
-        function openModal(id) { document.getElementById(id).style.display = "flex"; document.body.style.overflow = "hidden"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
-        window.onclick = function(event) { if (event.target.className.includes('modal')) { event.target.style.display = "none"; document.body.style.overflow = "auto"; } }
+        function changeSlide(containerId, direction) {
+            const container = document.getElementById(containerId);
+            const slides = container.getElementsByClassName('gallery-slide');
+            let activeIndex = 0;
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains('active')) {
+                    activeIndex = i;
+                    slides[i].classList.remove('active');
+                }
+            }
+            let newIndex = (activeIndex + direction + slides.length) % slides.length;
+            slides[newIndex].classList.add('active');
+        }
     </script>
+
+    <footer class="bg-gray-corp py-8 text-white/40 text-center">
+        <p class="text-[8px] uppercase tracking-[0.5em]">Happiness & Co Archive © 2026</p>
+    </footer>
 
 </body>
 </html>

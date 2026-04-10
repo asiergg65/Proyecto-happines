@@ -3,92 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCÉANOS DE PLÁSTICO | H&Co</title>
+    <title>OCÉANOS DE PLÁSTICO | HAPPINESS&Co</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Control del desplegable */
         #panel-entradas {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.7s ease-in-out;
         }
-        #flecha {
-            transition: transform 0.3s;
-        }
+        #flecha { transition: transform 0.3s; }
+        .payment-btn:hover { transform: scale(1.02); }
+        
+        /* Color Corporativo NARANJA Happiness & Co */
+        .text-hco-naranja { color: #ff6600; }
+        .bg-hco-naranja { background-color: #ff6600; }
+        .border-hco-naranja { border-color: #ff6600; }
+        .hover-bg-hco-naranja:hover { background-color: #e65c00; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-    <header class="bg-white border-b border-gray-100">
+    <header class="bg-white">
         <div class="container mx-auto px-4 py-8 flex justify-between items-center">
             <a href="index.html">
                 <img src="assets/img/happines-and-co-propuesta-02.png" alt="Logo H&Co" class="h-16 md:h-20">
             </a>
             <div class="text-right">
                 <p class="text-gray-400 font-black text-[10px] uppercase tracking-[0.3em]">Gijón / Xixón</p>
+                <p class="text-gray-500 italic text-xs mt-1">Orden en el océano del ocio</p>
             </div>
         </div>
     </header>
 
     <nav class="bg-[#555555] py-4">
         <div class="container mx-auto px-8">
-            <a href="exposiciones.html" class="text-white font-black uppercase text-xs tracking-widest hover:text-[#ff7b00] transition-colors">
-                ← VOLVER A EXPOSICIONES
+            <a href="proximos.html" class="text-white font-black uppercase text-xs tracking-widest hover:text-orange-400 transition-colors">
+                ← VOLVER A EVENTOS
             </a>
         </div>
     </nav>
 
+    <section class="bg-white py-12 border-b">
+        <div class="container mx-auto px-4">
+            <span class="text-hco-naranja font-black uppercase text-[10px] tracking-[0.4em] italic block mb-2">Exposición / Medio Ambiente</span>
+            <h1 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-none">OCÉANOS DE PLÁSTICO</h1>
+        </div>
+    </section>
+
     <main class="container mx-auto px-4 py-12 max-w-6xl">
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col md:flex-row gap-8">
             
-            <div class="bg-white p-10 border-l-8 border-[#ff7b00] shadow-sm">
-                <span class="text-[#ff7b00] font-black uppercase text-[10px] tracking-[0.4em] italic block mb-2">Exposiciones / Concienciación</span>
-                <h1 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mt-2 leading-none">OCÉANOS DE PLÁSTICO</h1>
+            <div class="md:w-1/2">
+                <div class="aspect-video bg-gray-200 overflow-hidden border-b-8 border-hco-naranja">
+                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=800" class="w-full h-full object-cover">
+                </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-1">
-                <div class="md:w-2/3 bg-gray-200 h-96">
-                    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=1000" class="w-full h-full object-cover" alt="Exposición Océanos">
+            <div class="md:w-1/2 flex flex-col gap-1">
+                <div class="bg-white p-6 border-l-4 border-hco-naranja">
+                    <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Ubicación</h4>
+                    <p class="font-bold text-lg uppercase">Acuario de Gijón</p>
                 </div>
-                
-                <div class="md:w-1/3 bg-black text-white p-8 flex flex-col justify-between">
-                    <div class="space-y-6">
-                        <div>
-                            <p class="text-[9px] font-black text-[#ff7b00] uppercase tracking-widest">Cuándo</p>
-                            <p class="font-bold uppercase text-lg leading-tight italic">05 Jun al 30 Jun 2026</p>
-                        </div>
-                        <div>
-                            <p class="text-[9px] font-black text-[#ff7b00] uppercase tracking-widest">Dónde</p>
-                            <p class="font-bold uppercase text-lg leading-tight italic">Laboral Ciudad Cultura</p>
-                        </div>
-                        <div>
-                            <p class="text-[9px] font-black text-[#ff7b00] uppercase tracking-widest">Precio</p>
-                            <p class="font-black text-3xl italic text-[#ff7b00]">3,50€</p>
-                        </div>
-                    </div>
+                <div class="bg-white p-6 border-l-4 border-hco-naranja">
+                    <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Temporada</h4>
+                    <p class="font-bold text-lg uppercase">Todo el año 2026</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-hco-naranja">
+                    <h4 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1 italic">Precio Entrada</h4>
+                    <p class="font-black text-2xl text-hco-naranja">12,00€</p>
+                </div>
 
-                    <div class="mt-4">
-                        <button onclick="toggleEntradas()" class="w-full bg-[#ff7b00] text-white text-center py-5 font-black uppercase text-[11px] tracking-widest hover:bg-white hover:text-black transition flex justify-center items-center gap-3">
-                            COMPRAR ENTRADAS <span id="flecha">▼</span>
-                        </button>
-                        
-                        <div id="panel-entradas" class="bg-white text-black">
-                            <div class="p-5 space-y-4 border-x border-b border-gray-100">
-                                <div class="flex justify-between items-center border-b border-gray-50 pb-3">
+                <div class="mt-2">
+                    <button onclick="toggleEntradas()" class="w-full bg-black text-white text-center py-6 font-black uppercase tracking-[0.3em] hover:bg-hco-naranja transition-colors flex justify-center items-center gap-4">
+                        RESERVAR TICKETS <span id="flecha">▼</span>
+                    </button>
+                    
+                    <div id="panel-entradas" class="bg-[#f5f7f9] border-t border-gray-200">
+                        <div class="p-6 md:p-8">
+                            <div class="flex flex-col gap-6">
+                                <div class="bg-white p-4 rounded border border-gray-200 shadow-sm flex justify-between items-center">
                                     <div>
-                                        <p class="text-[10px] font-black uppercase">Entrada General</p>
-                                        <p class="text-[9px] text-gray-400 uppercase italic">Acceso exposición</p>
+                                        <h4 class="font-black text-[10px] uppercase italic">Entrada General</h4>
+                                        <p class="text-[12px] font-black text-hco-naranja">12,00€ / ud.</p>
                                     </div>
-                                    <button class="text-[9px] font-black text-[#ff7b00] border border-[#ff7b00] px-3 py-1 hover:bg-[#ff7b00] hover:text-white transition">3,50€</button>
+                                    <div class="flex items-center border-2 border-gray-100 rounded-md overflow-hidden bg-gray-50">
+                                        <button onclick="updateTicket(-1, 12)" class="px-4 py-2 hover:bg-hco-naranja hover:text-white transition-all font-black">-</button>
+                                        <span id="ticket-qty" class="px-6 font-black text-lg">1</span>
+                                        <button onclick="updateTicket(1, 12)" class="px-4 py-2 hover:bg-hco-naranja hover:text-white transition-all font-black">+</button>
+                                    </div>
                                 </div>
-                                <div class="flex justify-between items-center">
-                                    <div>
-                                        <p class="text-[10px] font-black uppercase">Visita Guiada</p>
-                                        <p class="text-[9px] text-gray-400 uppercase italic">Grupos reducidos</p>
+                                
+                                <div class="bg-white p-6 rounded border border-gray-200 shadow-sm space-y-4">
+                                    <h5 class="text-[9px] font-black uppercase text-gray-400 tracking-[0.2em] italic">Información del Asistente</h5>
+                                    <input id="userName" type="text" placeholder="NOMBRE COMPLETO" class="w-full bg-gray-50 border-none p-4 text-[10px] font-black uppercase focus:ring-2 focus:ring-hco-naranja outline-none">
+                                    <input id="userEmail" type="email" placeholder="CORREO ELECTRÓNICO" class="w-full bg-gray-50 border-none p-4 text-[10px] font-black uppercase focus:ring-2 focus:ring-hco-naranja outline-none">
+                                </div>
+
+                                <div class="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                                    <div class="bg-hco-naranja p-2 text-white text-center">
+                                        <p class="text-[8px] font-black uppercase tracking-[0.3em]">Pago Seguro</p>
                                     </div>
-                                    <div class="text-right">
-                                        <p class="text-[11px] font-black text-[#ff7b00] mb-1">6,00€</p>
-                                        <button class="text-[9px] font-black text-[#ff7b00] border border-[#ff7b00] px-3 py-1 hover:bg-[#ff7b00] hover:text-white transition">RESERVAR</button>
+                                    <div class="p-6 space-y-4">
+                                        <div class="flex justify-between items-end border-b pb-4">
+                                            <span class="text-xs font-black uppercase italic text-gray-400">Total (x<span id="resumen-qty">1</span>)</span>
+                                            <span id="total-val" class="text-3xl font-black italic text-orange-600 leading-none">12€</span>
+                                        </div>
+                                        <div class="grid grid-cols-1 gap-2">
+                                            <button onclick="procesarPago('tarjeta')" class="payment-btn w-full bg-black text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">💳 Tarjeta</button>
+                                            <button onclick="procesarPago('bizum')" class="payment-btn w-full bg-[#3fe5b5] text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">📱 Bizum</button>
+                                            <button onclick="procesarPago('paypal')" class="payment-btn w-full bg-[#0070ba] text-white py-4 rounded font-black uppercase text-[10px] tracking-widest transition-all">P PayPal</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,38 +120,52 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white p-10 shadow-sm mt-10">
-                <h2 class="text-2xl font-black uppercase italic mb-6 border-b-2 border-black inline-block pb-1">La Muestra</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <p class="text-gray-600 leading-relaxed italic text-sm">
-                        Una exposición cruda y necesaria sobre el impacto del plástico en nuestros mares. A través de instalaciones artísticas creadas con residuos recuperados de la costa asturiana, esta muestra busca remover conciencias y proponer un cambio urgente en nuestros hábitos de consumo.
-                    </p>
-                    <ul class="space-y-3 text-[11px] font-black uppercase tracking-widest text-gray-500">
-                        <li class="flex items-center gap-2"><span class="text-[#ff7b00]">■</span> Instalaciones de gran formato</li>
-                        <li class="flex items-center gap-2"><span class="text-[#ff7b00]">■</span> Material didáctico interactivo</li>
-                        <li class="flex items-center gap-2"><span class="text-[#ff7b00]">■</span> Espacio de reflexión sostenible</li>
-                    </ul>
-                </div>
+        <div class="mt-12 bg-white p-10 shadow-sm border border-gray-100">
+            <h2 class="text-2xl font-black uppercase italic mb-6 border-b-2 border-black inline-block pb-1">Conciencia Ambiental</h2>
+            <div class="max-w-4xl">
+                <p class="text-gray-600 leading-relaxed mb-6 font-medium italic">
+                    Una exposición diseñada para entender el impacto del plástico en el ecosistema marino de Gijón. Ven a descubrir cómo podemos cambiar el futuro de nuestros océanos.
+                </p>
             </div>
         </div>
     </main>
 
-    <footer class="py-16 text-center">
-        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 italic">HAPPINESS&Co © 2026</p>
+    <footer class="bg-[#555555] py-16 text-center text-white">
+        <p class="text-[10px] uppercase tracking-[0.5em] font-black opacity-50 italic">HAPPINESS&Co © 2026 • GIJÓN</p>
     </footer>
 
     <script>
+        let quantity = 1;
         function toggleEntradas() {
             const panel = document.getElementById('panel-entradas');
             const flecha = document.getElementById('flecha');
             if (panel.style.maxHeight === "0px" || panel.style.maxHeight === "") {
-                panel.style.maxHeight = "500px";
+                panel.style.maxHeight = "2000px";
                 flecha.style.transform = "rotate(180deg)";
             } else {
                 panel.style.maxHeight = "0px";
                 flecha.style.transform = "rotate(0deg)";
             }
+        }
+        function updateTicket(change, price) {
+            quantity = Math.max(1, Math.min(10, quantity + change));
+            const total = quantity * price;
+            document.getElementById('ticket-qty').innerText = quantity;
+            document.getElementById('resumen-qty').innerText = quantity;
+            document.getElementById('total-val').innerText = total + "€";
+        }
+        function procesarPago(metodo) {
+            const nombre = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            if(nombre === "" || email === "") {
+                alert("Completa tus datos para recibir el ticket.");
+                return;
+            }
+            if(metodo === 'paypal') window.location.href = "https://www.paypal.com";
+            else if(metodo === 'bizum') window.location.href = "https://www.bizum.es";
+            else window.location.href = "https://www.redsys.es";
         }
     </script>
 </body>
