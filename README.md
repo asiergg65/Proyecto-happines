@@ -1,4 +1,4 @@
-Aquí tienes un README para GitHub, directo al grano y simplificado al máximo para que cualquiera que entre en tu repositorio entienda el proyecto en 10 segundos:
+
 
  HAPPINESS&Co - Agenda Cultural Gijón
 HAPPINESS&Co es una plataforma integral diseñada para gestionar y consultar la agenda cultural de Gijón. El proyecto cubre desde el diseño de interfaz hasta la gestión de datos y lógica de servidor.
